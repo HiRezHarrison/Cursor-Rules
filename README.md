@@ -1,0 +1,2 @@
+# Cursor-Rules
+Cursor Rules 
