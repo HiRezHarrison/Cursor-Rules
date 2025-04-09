@@ -40,6 +40,7 @@ The AI agent is responsible for managing branches and versions according to thes
 ## 4. Committing and Tagging
 
 - **Commit Trigger:** Commits should be made after a logical piece of work (feature, task, bug fix) is completed, *all* relevant tests (unit, integration, feature) have passed, and all required documentation (`agentnotes.md`, `notebook.md`, `project_checklist.md`) has been updated.
+- **Staging Files:** Before committing, stage all changed/new files relevant to the commit individually using `git add <file_path>` for each file. Do not attempt to stage entire directories or multiple files with a single `add` command.
 - **Commit Messages:** Use the Conventional Commits format, referencing the scope/task from the project plan.
     - Format: `type(scope): description (vX.Y.Z) - scope: <Project Plan Task/Bug ID>`
     - Examples:
