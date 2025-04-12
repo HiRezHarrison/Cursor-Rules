@@ -1,4 +1,6 @@
 # Agent Collaboration Rules
+# Version: 1.1
+# Last Updated: [Current Date]
 
 ## Project Understanding and Documentation
 
@@ -16,7 +18,7 @@ At a minimum the files in the notes folder should include:
 The github repository at https://github.com/Entropicsky/mycursorrules contains folders for tools and notes. Download those proactively to your .cursor/tools and .cursor/notes folder so you can use them. 
 
 # Project-Specific Overlay from Git Remote
-# Version: 1.0
+# Version: 1.1
 # Last Updated: [Current Date]
 #
 # This section describes how to overlay project-specific rules and tools from a Git remote repository.
@@ -37,6 +39,73 @@ The github repository at https://github.com/Entropicsky/mycursorrules contains f
 # - project_checklist.md: Must be present in the project's .cursor/notes directory
 # - agentnotes.md: Must be present in the project's .cursor/notes directory
 # - notebook.md: Must be present in the project's .cursor/notes directory
+
+## Trigger Commands
+
+### "Version Control" Trigger Command
+When the user issues the "Version Control" command, perform the following steps in order:
+
+1. **Check .cursor Structure**
+   - Verify if `.cursor` folder exists, create if missing
+   - Check for required subfolders (rules, tools, docs, notes), create if missing
+   - Verify required files exist in each subfolder, create if missing
+
+2. **Clone Rules Repository**
+   - Create temporary directory for cloning
+   - Clone the Cursor-Rules repository
+   - Verify successful clone
+
+3. **Copy Rules and Tools**
+   - Copy all files from `temp_project_rules/.cursor/rules` to workspace's `.cursor/rules`
+   - Copy all files from `temp_project_rules/.cursor/tools` to workspace's `.cursor/tools`
+   - Copy all files from `temp_project_rules/.cursor/docs` to workspace's `.cursor/docs`
+   - Copy all files from `temp_project_rules/.cursor/notes` to workspace's `.cursor/notes`
+
+4. **Cleanup and Verification**
+   - Remove temporary directory
+   - Verify all required files are present
+   - Report success or failure of the process
+
+5. **Documentation**
+   - Update project_checklist.md with version control status
+   - Document any issues or warnings in notebook.md
+   - Update agentnotes.md with version control information
+
+### "Start Me Up" Trigger Command
+When the user issues the "Start Me Up" command, perform the following steps in order:
+
+1. **Initial Setup**
+   - Check for `.cursor` folder and related subfolders
+   - Explore all files in that directory if it exists
+   - Get up to speed on previous sessions before making changes
+
+2. **Project Review**
+   - Methodically review the project's entire codebase
+   - Analyze project structure and architecture
+   - Document findings in project_checklist.md
+
+3. **Documentation Setup**
+   - Create or update project_checklist.md
+   - Create or update notebook.md
+   - Create or update agentnotes.md
+   - Set up any required technical specifications
+
+4. **Development Environment**
+   - Verify development tools and dependencies
+   - Set up testing framework if needed
+   - Configure any required external services
+
+5. **Project Planning**
+   - Create initial project plan
+   - Document architecture decisions
+   - Set up development workflow
+
+### "Doc It" Trigger Command
+When the user issues the "Doc It" command:
+- Update all relevant documentation files
+- Ensure version numbers are current
+- Update project status and progress
+- Document any recent changes or decisions
 
 Update these documents frequently yourself without prompting but also if the user prompts "doc it". 
 

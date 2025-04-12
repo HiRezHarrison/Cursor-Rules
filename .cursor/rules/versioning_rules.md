@@ -1,5 +1,5 @@
 # Versioning Rules for Cursor Projects
-# Version: 1.0
+# Version: 1.1
 # Last Updated: [Current Date]
 
 ## Overview
@@ -30,6 +30,10 @@ The following files must contain version information:
 4. Document the changes in the project's notes
 
 ## Version History
+- v1.1: Added "Version Control" trigger command
+  - Added dedicated version control process
+  - Updated documentation structure
+  - Improved versioning workflow
 - v1.0: Initial release of versioning rules
   - Established versioning format
   - Defined versioning process
