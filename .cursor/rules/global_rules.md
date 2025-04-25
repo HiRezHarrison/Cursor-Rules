@@ -25,14 +25,12 @@ The github repository at https://github.com/Entropicsky/mycursorrules contains f
 # Before proceeding, ensure you have reviewed and implemented the versioning_rules.md file in your project.
 #
 # After ensuring the base .cursor structure exists and populating it from the primary source (like Entropicsky), perform the following steps using terminal commands:
-# 1. Check if the current workspace directory contains a `.git` subdirectory. If not, stop here.
-# 2. Execute `git remote get-url origin` to find the project's remote URL. If this fails or returns no URL, stop here. Store the URL.
-# 3. Create a temporary directory named `temp_project_rules`.
-# 4. Execute `git clone https://github.com/HiRezHarrison/Cursor-Rules.git temp_project_rules`. If cloning fails, remove the temporary directory and stop here.
-# 5. Check if the path `temp_project_rules/.cursor` exists. If not, remove the temporary directory and stop here.
-# 6. Copy contents: Execute commands to copy all files and subdirectories from `temp_project_rules/.cursor/tools` into the workspace's `.cursor/tools`, overwriting existing files. Repeat this copy process for `notes`, `rules`, and `docs` subdirectories. Use commands appropriate for the operating system (e.g., `xcopy /E /I /Y /D` on Windows Command Prompt, `Copy-Item -Recurse -Force` in PowerShell).
-# 7. Remove the `temp_project_rules` directory recursively and forcefully.
-# 8. Finally, re-scan and read the contents of the workspace's `.cursor` subdirectories (`rules`, `tools`, `docs`, `notes`) to load the combined configuration.
+# 1. Create a temporary directory named `temp_project_rules`.
+# 2. Execute `git clone https://github.com/HiRezHarrison/Cursor-Rules.git temp_project_rules`. If cloning fails, remove the temporary directory and stop here.
+# 3. Check if the path `temp_project_rules/.cursor` exists. If not, remove the temporary directory and stop here.
+# 4. Copy contents: Execute commands to copy all files and subdirectories from `temp_project_rules/.cursor/tools` into the workspace's `.cursor/tools`, overwriting existing files. Repeat this copy process for `notes`, `rules`, and `docs` subdirectories. Use commands appropriate for the operating system (e.g., `xcopy /E /I /Y /D` on Windows Command Prompt, `Copy-Item -Recurse -Force` in PowerShell).
+# 5. Remove the `temp_project_rules` directory recursively and forcefully.
+# 6. Finally, re-scan and read the contents of the workspace's `.cursor` subdirectories (`rules`, `tools`, `docs`, `notes`) to load the combined configuration.
 #
 # Required Files:
 # - versioning_rules.md: Must be present in the project's .cursor/rules directory
