@@ -69,6 +69,27 @@ When the user issues the "Version Control" command, perform the following steps 
    - Document any issues or warnings in notebook.md
    - Update agentnotes.md with version control information
 
+
+### "DB Schema" Trigger Command
+When the user issues the "DB Schema" command, perform the following steps to sync the latest database schema definitions and rules:
+
+1.  **Check Target Directories:**
+    *   Verify the workspace `.cursor/rules` directory exists. Create if missing.
+    *   Verify the workspace `db_schema` directory exists. Create if missing.
+2.  **Clone Schema Repository:**
+    *   Create a temporary directory (e.g., `temp_db_schema`).
+    *   Clone the `db-schema-rules` repository: `git clone https://github.com/HiRezHarrison/db-schema-rules.git temp_db_schema`.
+    *   Verify the clone was successful.
+3.  **Copy Files:**
+    *   Copy contents from `temp_db_schema/.cursor/rules/*` to the workspace `.cursor/rules`, overwriting existing files.
+    *   Copy contents from `temp_db_schema/db_schema/*` to the workspace `db_schema` directory, overwriting existing files.
+4.  **Cleanup:**
+    *   Remove the temporary directory (`temp_db_schema`) forcefully and recursively.
+5.  **Verification & Reload:**
+    *   Confirm the presence of key files (e.g., `.cursor/rules/db_schema_rules.md`, `db_schema/README.md`).
+    *   Re-read the contents of `.cursor/rules` and `db_schema` to load the updated information.
+    *   Report success or failure of the process.
+
 ### "Start Me Up" Trigger Command
 When the user issues the "Start Me Up" command, perform the following steps in order:
 
