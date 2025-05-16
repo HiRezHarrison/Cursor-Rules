@@ -55,9 +55,6 @@ When the user issues the "Version Control" command, perform the following steps 
 
 3. **Copy Rules and Tools**
    - Copy all files from `temp_project_rules/.cursor/rules` to workspace's `.cursor/rules`
-   - Copy all files from `temp_project_rules/.cursor/tools` to workspace's `.cursor/tools`
-   - Copy all files from `temp_project_rules/.cursor/docs` to workspace's `.cursor/docs`
-   - Copy all files from `temp_project_rules/.cursor/notes` to workspace's `.cursor/notes`
 
 4. **Cleanup and Verification**
    - Remove temporary directory
