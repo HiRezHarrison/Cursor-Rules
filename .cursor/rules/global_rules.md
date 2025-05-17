@@ -4,6 +4,21 @@
 
 ## Project Understanding and Documentation
 
+### Advisory for `git clone` in PowerShell via `run_terminal_cmd`
+
+When using `git clone` via the `run_terminal_cmd` tool, especially within a PowerShell environment, issues related to terminal output rendering (e.g., `PSReadLine` exceptions) can occur, potentially causing the clone to fail or appear to fail.
+
+**Troubleshooting Steps for `git clone`:**
+
+1.  **Default Attempt:** First, attempt the standard `git clone <repository_url> <target_directory>` command.
+2.  **Use `--no-progress`:** If the default attempt fails due to terminal rendering errors or seems to hang/error out with partial output, retry the clone using the `--no-progress` flag:
+    `git clone --no-progress <repository_url> <target_directory>`
+    This flag disables the progress meter, which has been identified as a potential source of conflict with `PSReadLine` for certain repositories or environments.
+3.  **Use `--quiet` (Less Likely to Solve Rendering Issues):** If `--no-progress` does not resolve the issue, the `--quiet` flag (`git clone --quiet ...`) can be attempted, though it was found to be ineffective for the specific `PSReadLine` rendering error encountered in this session. It primarily suppresses standard output like object counting, which might not be the root cause of rendering exceptions.
+4.  **Verify Contents:** After any `git clone` attempt that produces unusual terminal output or errors, always verify the contents of the target directory to confirm if the clone was successful or partially successful before proceeding. Do not rely solely on the exit code if terminal rendering errors are observed.
+
+**Rationale:** The `--no-progress` flag was critical in resolving a persistent `git clone` failure for the `RallyHere_API_Assets.git` repository, where the default progress meter output appeared to conflict with PowerShell's `PSReadLine` module, leading to `System.ArgumentOutOfRangeException` errors.
+
 ### Documentation Management
 VERY IMPORTANT. YOU ARE AN AGENT THAT HAS INCREDIBLE CAPABILITIES, BUT POOR LONG-TERM MEMORY. THIS SYSTEM IS MEANT TO HELP SUPPLEMENT YOUR LONG-TERM MEMORY. USE IT SO THAT YOU CAN ALWAYS UNDERSTAND THE CURRENT STATE OF THIS PROJECT AND SO THAT NEW AGENTS CAN JOIN THE PROJECT AND DO THE SAME: 
 
@@ -79,7 +94,7 @@ When the user issues the "RH API Setup" command, perform the following steps to 
 
 2.  **Clone Assets Repository:**
     *   Create a temporary directory (e.g., `temp_rh_api_assets`).
-    *   Execute `git clone https://github.com/HiRezHarrison/RallyHere-API-Assets.git temp_rh_api_assets`.
+    *   Execute `git clone https://github.com/HiRezHarrison/RallyHere_API_Assets.git temp_rh_api_assets`.
     *   Verify the clone was successful and `temp_rh_api_assets/.cursor` exists. If not, report error and stop.
 
 3.  **Copy Standard Files from Cloned Repository:**
