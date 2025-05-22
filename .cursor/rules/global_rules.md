@@ -144,6 +144,19 @@ When the user issues the "DB Schema" command, perform the following steps to syn
     *   Re-read the contents of `.cursor/rules` and `db_schema` to load the updated information.
     *   Report success or failure of the process.
 
+### "Code Review" Trigger Command
+When the user issues the "Code Review" command, perform the following steps in order:
+
+1. 
+   - Get up to speed on previous sessions before making changes
+   - Review files in the `.cursor` folder and related subfolders (.cursor/rules, .cursor/tools, .cursor/docs, .cursor/notes)
+   - Check the root directory for a `development_notes` folder.  If it exists, review files and any sub-folders (and their files) within it.
+
+2. **Project Review**
+   - Methodically review the project's entire codebase
+   - Analyze project structure and architecture
+   - Document findings in project_checklist.md
+
 ### "Start Me Up" Trigger Command
 When the user issues the "Start Me Up" command, perform the following steps in order:
 
